@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/08/29 18:53:18 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/01 00:42:50 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "ft_utils1.h"
+#include "ft_lst1.h"
+#include "ft_lst2.h"
 
 void	printlist(t_list *current)
 {
@@ -27,7 +31,6 @@ int	main(int argc, char **argv)
 	int		*num_ptr;
 	int		i;
 	t_list	*head;
-	t_list	*current;
 
 	i = 1;
 	head = NULL;
