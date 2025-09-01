@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/01 12:50:10 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/01 18:52:08 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,32 @@ void	printlist(t_list *current)
 	printf("NULL\n");
 }
 
-int	main(int argc, char **argv)
+int	populate_list(t_list **start, int argc, char **argv)
 {
-	int		*num_ptr;
-	int		i;
-	t_list	*head;
+	int i;
+	int *num_ptr;
 
 	i = 1;
-	head = NULL;
-	if (argc < 2)
-		return (printf("Error"), -1);
 	while (i < argc)
 	{
 		num_ptr = malloc(sizeof(int));
 		if (!num_ptr)
 			return (1);
 		*num_ptr = ft_atoi(argv[i]);
-		ft_lstadd_back(&head, ft_lstnew(num_ptr));
+		ft_lstadd_back(start, ft_lstnew(num_ptr));
 		i++;
 	}
+	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	t_list	*head;
+
+	head = NULL;
+	if (argc < 2)
+		return (printf("Error"), -1);
+	populate_list(&head, argc, argv);
 	printlist(head);
 	return (ft_lstclear(&head, ft_free_int_content), 0);
 }
