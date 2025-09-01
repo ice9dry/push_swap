@@ -6,14 +6,13 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/01 19:05:43 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/01 20:44:45 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include "ft_utils1.h"
-#include "ft_lst_ops.h"
 #include "ft_lst_base.h"
 
 static int	ft_changesign(int character)

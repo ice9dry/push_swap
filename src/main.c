@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/01 18:57:56 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/01 21:39:25 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include <stdlib.h>
 #include "ft_utils1.h"
 #include "ft_lst_base.h"
-#include "ft_lst_ops.h"
-#include "struct.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 int	main(int argc, char **argv)
 {
