@@ -1,50 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst2.c                                          :+:      :+:    :+:   */
+/*   ft_lst_base.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 14:12:22 by marlee            #+#    #+#             */
-/*   Updated: 2025/08/29 18:26:15 by marlee           ###   ########.fr       */
+/*   Created: 2025/09/01 12:35:14 by marlee            #+#    #+#             */
+/*   Updated: 2025/09/01 12:53:35 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst2.h"
+#include <stdlib.h>
+#include "ft_lst_base.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
-
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*new_list;
-	t_list	*new_node;
-	void	*new_content;
-
-	new_list = NULL;
-	if (!lst || !f)
-		return (NULL);
-	while (lst)
-	{
-		new_content = f(lst->content);
-		new_node = ft_lstnew(new_content);
-		if (!new_node)
-		{
-			ft_lstclear(&new_list, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&new_list, new_node);
-		lst = lst->next;
-	}
-	return (new_list);
-}
-
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
@@ -56,7 +31,6 @@ t_list	*ft_lstnew(void *content)
 	new_node->next = NULL;
 	return (new_node);
 }
-
 int	ft_lstsize(t_list *lst)
 {
 	int	count;
@@ -69,8 +43,15 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
-
 void	ft_free_int_content(void *content)
 {
 	free(content);
+}
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
