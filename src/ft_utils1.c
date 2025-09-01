@@ -6,11 +6,15 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/08/29 14:56:00 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/01 19:05:43 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <stdio.h>
 #include "ft_utils1.h"
+#include "ft_lst_ops.h"
+#include "ft_lst_base.h"
 
 static int	ft_changesign(int character)
 {
@@ -53,4 +57,32 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (result * sign);
+}
+
+int	populate_list(t_list **start, int argc, char **argv)
+{
+	int i;
+	int *num_ptr;
+
+	i = 1;
+	while (i < argc)
+	{
+		num_ptr = malloc(sizeof(int));
+		if (!num_ptr)
+			return (1);
+		*num_ptr = ft_atoi(argv[i]);
+		ft_lstadd_back(start, ft_lstnew(num_ptr));
+		i++;
+	}
+	return (0);
+}
+
+void	printlist(t_list *current)
+{
+	while (current)
+	{
+		printf("%d -> ", *(int *)current->content);
+		current = current->next;
+	}
+	printf("NULL\n");
 }
