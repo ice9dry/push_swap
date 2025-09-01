@@ -14,7 +14,7 @@ BIN_DIR = bin
 NAME = $(BIN_DIR)/main.out
 
 # Source files
-SRC = main.c ft_lst1.c ft_lst2.c ft_utils1.c
+SRC = main.c ft_lst_ops.c ft_lst_base.c ft_utils1.c
 
 # Objects
 OBJ	= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
