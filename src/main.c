@@ -3,19 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/01 21:39:25 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/02 08:35:58 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "ft_utils1.h"
-#include "ft_lst_base.h"
+#include "utils1.h"
 #include "ft_printf.h"
-#include "libft.h"
 
 int	main(int argc, char **argv)
 {
@@ -23,7 +21,7 @@ int	main(int argc, char **argv)
 
 	head = NULL;
 	if (argc < 2)
-		return (printf("Error"), -1);
+		return (ft_printf("Error\n"), -1);
 	populate_list(&head, argc, argv);
 	printlist(head);
 	return (ft_lstclear(&head, ft_free_int_content), 0);

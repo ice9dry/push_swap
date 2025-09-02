@@ -16,7 +16,7 @@ FT_PRINTF_DIR = ft_printf
 NAME = $(BIN_DIR)/main.out
 
 # Source files
-SRC = main.c ft_lst_base.c ft_utils1.c
+SRC = main.c utils1.c
 
 # Objects
 OBJ	= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
