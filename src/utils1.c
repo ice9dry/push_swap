@@ -6,13 +6,15 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 10:54:21 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/02 15:46:20 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include "utils1.h"
+#include "utils2.h"
+#include "ft_printf.h"
 
 void	printlist(t_list *current)
 {
@@ -29,7 +31,7 @@ void	ft_free_int_content(void *content)
 	free(content);
 }
 
-int	free_split_array(char **array)
+static int	free_split_array(char **array)
 {
 	int	i;
 
@@ -45,7 +47,7 @@ int	free_split_array(char **array)
 	return (0);
 }
 
-int	populate_list_from_array(t_list **start, int count, char **array)
+static int	populate_list_from_array(t_list **start, int count, char **array)
 {
 	int i;
 	int *num_ptr;
@@ -53,6 +55,11 @@ int	populate_list_from_array(t_list **start, int count, char **array)
 	i = 0;
 	while (i < count)
 	{
+		if (!is_valid_integer(array[i]))
+		{
+			ft_printf("Error\n");
+			return (1);
+		}
 		num_ptr = malloc(sizeof(int));
 		if (!num_ptr)
 			return (1);
@@ -62,7 +69,7 @@ int	populate_list_from_array(t_list **start, int count, char **array)
 	}
 	return (0);
 }
-int	populate_from_single_string(t_list **start, char *arg_str)
+static int	populate_from_single_string(t_list **start, char *arg_str)
 {
 	char	**split_array;
 	int		count;
@@ -80,8 +87,11 @@ int	populate_from_single_string(t_list **start, char *arg_str)
 }
 int	check_and_populate(t_list **start, int argc, char **argv)
 {
-	if (argc < 2)
+	if (argc < 2 || (argc == 2 && argv[1][0] == '\0'))
+	{
+		ft_printf("Error\n");
 		return (1);
+	}	
 	if (argc == 2)
 		return (populate_from_single_string(start, argv[1]));
 	else

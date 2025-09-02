@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 10:41:58 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/02 14:03:32 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	main(int argc, char **argv)
 	t_list	*head;
 
 	head = NULL;
-	if (argc < 2)
-		return (ft_printf("Error\n"), -1);
-	check_and_populate(&head, argc, argv);
-	printlist(head);
+	// if (argc < 2)
+	// 	return (ft_printf("Error\n"), -1);
+	if (!check_and_populate(&head, argc, argv))
+		printlist(head);
 	return (ft_lstclear(&head, ft_free_int_content), 0);
 }
