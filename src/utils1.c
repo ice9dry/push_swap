@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 23:25:53 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/02 23:44:22 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ static int	populate_list_from_array(t_list **start, int count, char **array)
 		inner_node = outer_node->next;
 		while (inner_node)
 		{
-			ft_printf("%d\n", *((int *)((outer_node)->content)));
-			if (*((int *)((outer_node)->content)) == (*((int *)((inner_node)->content))))
+			ft_printf("%d\n", *((int *)(outer_node->content)));
+			if (*((int *)((outer_node)->content)) == (*((int *)(inner_node->content))))
 				ft_printf("DUPLICATE\n");
 			inner_node = inner_node->next;
 		}
