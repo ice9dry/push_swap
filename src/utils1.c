@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 15:46:20 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/02 16:44:59 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ void	printlist(t_list *current)
 		current = current->next;
 	}
 	printf("NULL\n");
+}
+
+void	printlistboth(t_list *stk_a, t_list *stk_b)
+{
+	ft_printf("Stack A: ");
+	printlist(stk_a);
+	ft_printf("Stack B: ");
+	printlist(stk_b);
 }
 
 void	ft_free_int_content(void *content)
