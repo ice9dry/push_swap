@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 18:39:52 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/02 19:50:06 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "push.h"
 #include "rotate.h"
 #include "reverse_rotate.h"
+#include "swap.h"
 
 int	main(int argc, char **argv)
 {
@@ -45,6 +46,15 @@ int	main(int argc, char **argv)
 	printlistboth(stk_a, stk_b);
 	rrr(&stk_a, &stk_b);
 	printlistboth(stk_a, stk_b);
-	
+	pa(&stk_a, &stk_b);
+	printlistboth(stk_a, stk_b);
+	sa(&stk_a);
+	printlistboth(stk_a, stk_b);
+	sb(&stk_b);
+	printlistboth(stk_a, stk_b);
+	pa(&stk_a, &stk_b);
+	printlistboth(stk_a, stk_b);
+	ss(&stk_a, &stk_b);
+	printlistboth(stk_a, stk_b);
 	return (ft_lstclear(&stk_a, ft_free_int_content), 0);
 }
