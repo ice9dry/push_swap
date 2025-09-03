@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 19:31:24 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 19:43:55 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static int	check_duplicates(t_list **start)
 		while (inner_node)
 		{
 			// ft_printf("%d\n", *((int *)(outer_node->content)));
-			if (*((int *)((outer_node)->content)) \
-== (*((int *)(inner_node->content))))
+			if (((t_data *)outer_node->content)->value \
+== (((t_data *)inner_node->content)->value))
 			{
 				ft_printf("DUPLICATE\n");
 				return (1);
