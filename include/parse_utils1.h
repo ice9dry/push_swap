@@ -20,6 +20,12 @@
 # include "free_utils.h"
 # include "parse_utils2.h"
 
+typedef struct s_data
+{
+	int	value;
+	int	index;
+}	t_data;
+
 int		check_and_populate(t_list **start, int argc, char **argv);
 
 #endif

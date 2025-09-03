@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 12:19:32 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 19:31:24 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ static int	check_duplicates(t_list **start)
 
 static int	populate_list_from_array(t_list **start, int count, char **array)
 {
-	int	i;
-	int	*num_ptr;
+	int		i;
+	// int		*num_ptr;
+	t_data	*data;
 
 	i = 0;
 	while (i < count)
@@ -50,11 +51,11 @@ static int	populate_list_from_array(t_list **start, int count, char **array)
 			ft_printf("Error\n");
 			return (1);
 		}
-		num_ptr = malloc(sizeof(int));
-		if (!num_ptr)
+		data = malloc(sizeof(t_data));
+		if (!data)
 			return (1);
-		*num_ptr = ft_atoi(array[i]);
-		ft_lstadd_back(start, ft_lstnew(num_ptr));
+		data->value = ft_atoi(array[i]);
+		ft_lstadd_back(start, ft_lstnew(data));
 		i++;
 	}
 	if (check_duplicates(start))

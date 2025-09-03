@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 11:50:52 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 11:51:39 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 12:56:39 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@
 # include "swap.h"
 # include "printout_utils.h"
 # include "free_utils.h"
+# include "turk_sort.h"
 
 #endif
