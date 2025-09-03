@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 23:44:22 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 10:56:05 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "utils1.h"
 #include "utils2.h"
 #include "ft_printf.h"
+
+static void	isDuplicates(t_list **start);
 
 void	printlist(t_list *current)
 {
@@ -59,9 +61,6 @@ static int	populate_list_from_array(t_list **start, int count, char **array)
 {
 	int i;
 	int *num_ptr;
-	t_list	*inner_node;
-	t_list	*outer_node;
-	// int number;
 
 	i = 0;
 	while (i < count)
@@ -78,6 +77,14 @@ static int	populate_list_from_array(t_list **start, int count, char **array)
 		ft_lstadd_back(start, ft_lstnew(num_ptr));
 		i++;
 	}
+	isDuplicates(start);
+	return (0);
+}
+static void	isDuplicates(t_list **start)
+{
+	t_list	*inner_node;
+	t_list	*outer_node;
+
 	outer_node = *start;
 	while (outer_node->next)
 	{
@@ -91,8 +98,8 @@ static int	populate_list_from_array(t_list **start, int count, char **array)
 		}
 		outer_node = outer_node->next;
 	}
-	return (0);
 }
+
 static int	populate_from_single_string(t_list **start, char *arg_str)
 {
 	char	**split_array;
@@ -115,7 +122,7 @@ int	check_and_populate(t_list **start, int argc, char **argv)
 	{
 		ft_printf("Error\n");
 		return (1);
-	}	
+	}
 	if (argc == 2)
 		return (populate_from_single_string(start, argv[1]));
 	else
