@@ -6,13 +6,13 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 11:47:30 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 12:19:32 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse_utils1.h"
 
-static void	check_duplicates(t_list **start)
+static int	check_duplicates(t_list **start)
 {
 	t_list	*inner_node;
 	t_list	*outer_node;
@@ -23,14 +23,18 @@ static void	check_duplicates(t_list **start)
 		inner_node = outer_node->next;
 		while (inner_node)
 		{
-			ft_printf("%d\n", *((int *)(outer_node->content)));
+			// ft_printf("%d\n", *((int *)(outer_node->content)));
 			if (*((int *)((outer_node)->content)) \
 == (*((int *)(inner_node->content))))
+			{
 				ft_printf("DUPLICATE\n");
+				return (1);
+			}
 			inner_node = inner_node->next;
 		}
 		outer_node = outer_node->next;
 	}
+	return (0);
 }
 
 static int	populate_list_from_array(t_list **start, int count, char **array)
@@ -53,7 +57,8 @@ static int	populate_list_from_array(t_list **start, int count, char **array)
 		ft_lstadd_back(start, ft_lstnew(num_ptr));
 		i++;
 	}
-	check_duplicates(start);
+	if (check_duplicates(start))
+		return (1);
 	return (0);
 }
 

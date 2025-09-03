@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 11:51:55 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 12:04:37 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	main(int argc, char **argv)
 	stk_b = NULL;
 	if (!check_and_populate(&stk_a, argc, argv))
 		printlist(stk_a);
+	else
+		return (ft_printf("Error\n"), ft_lstclear(&stk_a, free_int_content), 1);
 	// ra(&stk_a);
 	printlistboth(stk_a, stk_b);
 	// ra(&stk_a);
@@ -49,5 +51,5 @@ int	main(int argc, char **argv)
 	// printlistboth(stk_a, stk_b);
 	// ss(&stk_a, &stk_b);
 	// printlistboth(stk_a, stk_b);
-	return (ft_lstclear(&stk_a, ft_free_int_content), 0);
+	return (ft_lstclear(&stk_a, free_int_content), 0);
 }

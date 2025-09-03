@@ -6,13 +6,13 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 11:13:18 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 11:24:13 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 12:02:43 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free_utils.h"
 
-void	ft_free_int_content(void *content)
+void	free_int_content(void *content)
 {
 	free(content);
 }

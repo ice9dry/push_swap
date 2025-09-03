@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 11:14:23 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 11:25:24 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 12:02:43 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "stdlib.h"
 
-void	ft_free_int_content(void *content);
+void	free_int_content(void *content);
 int		free_split_array(char **array);
 
 #endif
