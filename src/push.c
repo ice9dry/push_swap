@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 16:01:55 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 17:24:32 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 11:48:58 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
 #include "push.h"
 
 void	push(t_list **src_stack, t_list **dst_stack)
@@ -19,7 +17,7 @@ void	push(t_list **src_stack, t_list **dst_stack)
 	t_list	*node_to_push;
 
 	if (!*src_stack)
-	{	
+	{
 		ft_printf("NOTHING TO DO! Remove this before submission!\n");
 		return ;
 	}

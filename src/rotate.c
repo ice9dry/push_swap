@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 17:03:34 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 17:46:47 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 11:49:59 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rotate.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 void	rotate(t_list **stack)
 {
@@ -20,7 +18,7 @@ void	rotate(t_list **stack)
 	t_list	*last_node;
 
 	if (!*stack || !(*stack)->next)
-	{	
+	{
 		ft_printf("NOTHING TO DO! Remove this before submission!\n");
 		return ;
 	}

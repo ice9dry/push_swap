@@ -1,0 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printout_utils.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/03 11:04:57 by marlee            #+#    #+#             */
+/*   Updated: 2025/09/03 11:27:28 by marlee           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PRINTOUT_UTILS_H
+# define PRINTOUT_UTILS_H
+
+# include "ft_printf.h"
+
+void	printlist(t_list *current);
+void	printlistboth(t_list *stk_a, t_list *stk_b);
+
+#endif

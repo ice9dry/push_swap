@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   revers_rotate.c                                    :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 17:03:34 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 18:31:51 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 11:49:24 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "reverse_rotate.h"
-#include "ft_printf.h"
 
-//Shifts last element to the top. 
+//Shifts last element to the top.
 void	reverse_rotate(t_list **stack)
 {
 	t_list	*last_node;
 	t_list	*second_last_node;
 
 	if (!*stack || !(*stack)->next)
-	{	
+	{
 		ft_printf("NOTHING TO DO! Remove this before submission!\n");
 		return ;
 	}

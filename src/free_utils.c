@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.h                                           :+:      :+:    :+:   */
+/*   free_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 12:10:09 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 12:20:01 by marlee           ###   ########.fr       */
+/*   Created: 2025/09/03 11:13:18 by marlee            #+#    #+#             */
+/*   Updated: 2025/09/03 11:24:13 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS2_H
-# define UTILS2_H
+#include "free_utils.h"
 
-int is_valid_integer(const char *str);
+void	ft_free_int_content(void *content)
+{
+	free(content);
+}
 
-#endif
+int	free_split_array(char **array)
+{
+	int	i;
+
+	if (!array)
+		return (1);
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+	return (0);
+}

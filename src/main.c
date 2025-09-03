@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/02 21:37:22 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/03 11:51:55 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "utils1.h"
-#include "ft_printf.h"
-#include "push.h"
-#include "rotate.h"
-#include "reverse_rotate.h"
-#include "swap.h"
+#include "main.h"
 
 int	main(int argc, char **argv)
 {
