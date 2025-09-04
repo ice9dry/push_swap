@@ -3,7 +3,7 @@
 #include <time.h>
 #include <limits.h>
 
-#define NUMBERS_TO_GENERATE 10
+#define NUMBERS_TO_GENERATE 20
 
 // Function to check for duplicates in the array
 int is_duplicate(int *arr, int size, int num) {
