@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 22:25:22 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 01:16:52 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/05 14:56:17 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	radix_sort(t_list **stk_a, t_list **stk_b)
 	int		i;
 	int		j;
 	int		size;
-	
+
 	size = ft_lstsize(*stk_a);
 	max_bits = 0;
 	while ((size - 1) >> max_bits)

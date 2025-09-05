@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 22:23:08 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 11:07:48 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/05 14:36:36 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@
 
 void	radix_sort(t_list **stk_a, t_list **stk_b);
 void	radix_sort_2(t_list **stk_a, t_list **stk_b);
+void	radix_sort_3(t_list **stk_a, t_list **stk_b);
 
 #endif

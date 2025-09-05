@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 22:25:22 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 11:20:55 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/05 14:32:48 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,36 +30,39 @@ void radix_sort_2(t_list **stk_a, t_list **stk_b)
 	while (i < max_bits)
 	{
 		j = 0;
-		while (j < size)
+		if (i % 2 == 0) // Even pass: read from A, push to B
+
 		{
-			if (i % 2 == 0) // Even pass: read from A, push to B
+			while (j++ < size)
 			{
-				ft_printf("odd SORT");
+				// ft_printf("odd SORT");
 				data = (t_data *)(*stk_a)->content;
-				if (((data->index >> i) & 1) == 1)
+				if (((data->index >> i) & 1) == 0)
 					pb(stk_a, stk_b);
 				else
 					ra(stk_a);
 			}
-			else // Odd pass: read from B, push to A
+		}
+		else // Odd pass: read from B, push to A
+		{
+			while (j++ < size)
 			{
-				ft_printf("even SORT");
+			// ft_printf("even SORT");
 				data = (t_data *)(*stk_b)->content;
-				if (((data->index >> i) & 1) == 1)
-					pa(stk_a, stk_b); // Note the reversed arguments
+				if (((data->index >> i) & 1) == 0)
+					pa(stk_a, stk_b);
 				else
 					rb(stk_b);
 			}
-			j++;
 		}
 		i++;
 	}
 	// Final check: if the last pass was odd, the sorted stack is in B.
 	// Push everything back to A.
-	ft_printf("PARTIAL SORT COMPLETED");
-	if (max_bits % 2 != 0)
-	{
+	// ft_printf("PARTIAL SORT COMPLETED");
+	// if (max_bits % 2 != 0)
+	// {
 		while (*stk_b)
 			pa(stk_a, stk_b);
-	}
+	// }
 }

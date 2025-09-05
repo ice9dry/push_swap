@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 11:50:52 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/04 22:55:28 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/05 16:11:21 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@
 # include "turk_sort.h"
 # include "norm_and_index.h"
 # include "radix_sort.h"
+# include "is_sorted.h"
+# include "choose_sort.h"
 
 #endif
