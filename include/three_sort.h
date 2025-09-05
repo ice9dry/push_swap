@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:39:06 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 16:13:57 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/05 20:41:43 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@
 # include "swap.h"
 
 void	three_sort(t_list **stk_a);
+void	four_sort(t_list **stk_a, t_list **stk_b);
+void	five_sort(t_list **stk_a, t_list **stk_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:52:14 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 17:35:28 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/05 21:31:28 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,28 +27,30 @@ int	norm_and_index(t_list *stk_a)
 	{
 		data = (t_data *)current->content;
 		arr[i] = data->value;
-		ft_printf("%d -> ",arr[i]);
+		// ft_printf("%d -> ",arr[i]);
 		i++;
 		current = current->next;
 	}
-	ft_printf("lstsize = %d\n", ft_lstsize(stk_a));
+	// ft_printf("lstsize = %d\n", ft_lstsize(stk_a));
+	ft_printf("Bubble sort start\n");
 	bubble_sort(arr, ft_lstsize(stk_a));
+	ft_printf("Bubble sort end\n");
 	current = stk_a;
 	while (current)
 	{
 		data = (t_data *)current->content;
 		data->index = get_sorted_index(data->value, arr, ft_lstsize(stk_a));
-		ft_printf("%d (%d) -> ", data->value, data->index);
+		// ft_printf("%d (%d) -> ", data->value, data->index);
 		current = current->next;
 	}
-	ft_printf("\n");
+	// ft_printf("\n");
 	i = 0;
 	while (i < ft_lstsize(stk_a))
 	{
-		ft_printf("%d -> ", arr[i]);
+		// ft_printf("%d -> ", arr[i]);
 		i++;
 	}
-	ft_printf("\n");
+	// ft_printf("\n");
 	free(arr);
 	return (0);
 }

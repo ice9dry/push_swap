@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 11:50:52 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 16:11:21 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/05 18:54:11 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@
 # include "radix_sort.h"
 # include "is_sorted.h"
 # include "choose_sort.h"
+# include "chunk_sort.h"
 
 #endif

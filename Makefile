@@ -19,7 +19,7 @@ NAME = $(BIN_DIR)/main.out
 SRC = main.c parse_utils1.c parse_utils2.c push.c rotate.c reverse_rotate.c swap.c \
 	printout_utils.c free_utils.c norm_and_index.c \
 	radix_sort.c radix_sort_2.c radix_sort_3.c is_sorted.c \
-	choose_sort.c three_sort.c
+	choose_sort.c three_sort.c chunk_sort.c
 
 # Objects
 OBJ	= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
