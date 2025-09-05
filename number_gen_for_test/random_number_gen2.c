@@ -3,7 +3,7 @@
 #include <time.h>
 #include <limits.h>
 
-#define NUMBERS_TO_GENERATE 100
+#define NUMBERS_TO_GENERATE 500
 #define MIN_RANGE -1000
 #define MAX_RANGE 1000
 

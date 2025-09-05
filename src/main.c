@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 01:07:05 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/05 11:16:07 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	main(int argc, char **argv)
 			// turk_sort(&stk_a, &stk_b);
 	norm_and_index(stk_a);
 			// ra(&stk_a);
-	radix_sort(&stk_a, &stk_b);
+	radix_sort_2(&stk_a, &stk_b);
+	ft_printf("SORT COMPLETED");
 	printlistboth(stk_a, stk_b);
 	// ra(&stk_a);
 	// printlistboth(stk_a, stk_b);

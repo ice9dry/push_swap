@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 22:23:08 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/04 23:59:51 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/05 11:07:48 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@
 # include "printout_utils.h"
 
 void	radix_sort(t_list **stk_a, t_list **stk_b);
+void	radix_sort_2(t_list **stk_a, t_list **stk_b);
 
 #endif
