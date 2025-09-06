@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_utils1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 19:43:55 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/06 11:16:45 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,9 @@ static int	check_duplicates(t_list **start)
 		inner_node = outer_node->next;
 		while (inner_node)
 		{
-			// ft_printf("%d\n", *((int *)(outer_node->content)));
-			if (((t_data *)outer_node->content)->value \
-== (((t_data *)inner_node->content)->value))
-			{
-				ft_printf("DUPLICATE\n");
+			if (((t_data *)outer_node->content)->value
+				== (((t_data *)inner_node->content)->value))
 				return (1);
-			}
 			inner_node = inner_node->next;
 		}
 		outer_node = outer_node->next;
@@ -40,7 +36,6 @@ static int	check_duplicates(t_list **start)
 static int	populate_list_from_array(t_list **start, int count, char **array)
 {
 	int		i;
-	// int		*num_ptr;
 	t_data	*data;
 
 	i = 0;

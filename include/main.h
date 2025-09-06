@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 11:50:52 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 18:54:11 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/06 09:36:52 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@
 # include "radix_sort.h"
 # include "is_sorted.h"
 # include "choose_sort.h"
-# include "chunk_sort.h"
 
 #endif

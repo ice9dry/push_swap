@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   three_sort.c                                       :+:      :+:    :+:   */
+/*   three_to_five_sort.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:38:39 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 21:00:44 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/06 09:43:51 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "three_sort.h"
-
+#include "three_to_five_sort.h"
 
 static int	find_min_pos(t_list **stack)
 {

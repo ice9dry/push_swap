@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   choose_sort.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:24:22 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 18:54:36 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/06 10:05:12 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 # include "ft_printf.h"
 # include "parse_utils1.h"
 # include "radix_sort.h"
-# include "three_sort.h"
-# include "chunk_sort.h"
+# include "three_to_five_sort.h"
 
 void	choose_sort(t_list **stk_a, t_list **stk_b);
 

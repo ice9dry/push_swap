@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   three_sort.h                                       :+:      :+:    :+:   */
+/*   three_to_five_sort.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:39:06 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 20:41:43 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/06 09:42:19 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef THREE_SORT_H
-# define THREE_SORT_H
+#ifndef THREE_TO_FIVE_SORT_H
+# define THREE_TO_FIVE_SORT_H
 
 # include "libft.h"
 # include "ft_printf.h"

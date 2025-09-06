@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 21:32:45 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/06 10:02:50 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ int	main(int argc, char **argv)
 	// 	printlist(stk_a);
 	// else
 		return (ft_printf("Error\n"), ft_lstclear(&stk_a, free_int_content), 1);
-	ft_printf("Bubble sort start\n");
 	norm_and_index(stk_a);
-	ft_printf("Bubble sort end\n");
 	if (is_sorted(stk_a))
 		return (0);
 	choose_sort(&stk_a, &stk_b);

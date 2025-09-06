@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   norm_and_index.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:52:14 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 21:31:28 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/06 10:03:02 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ int	norm_and_index(t_list *stk_a)
 		current = current->next;
 	}
 	// ft_printf("lstsize = %d\n", ft_lstsize(stk_a));
-	ft_printf("Bubble sort start\n");
 	bubble_sort(arr, ft_lstsize(stk_a));
-	ft_printf("Bubble sort end\n");
 	current = stk_a;
 	while (current)
 	{
