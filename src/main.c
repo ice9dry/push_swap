@@ -20,14 +20,10 @@ int	main(int argc, char **argv)
 	stk_a = NULL;
 	stk_b = NULL;
 	if (check_and_populate(&stk_a, argc, argv))
-	// 	printlist(stk_a);
-	// else
 		return (ft_printf("Error\n"), ft_lstclear(&stk_a, free_int_content), 1);
 	norm_and_index(stk_a);
 	if (is_sorted(stk_a))
-		return (0);
+		return (ft_lstclear(&stk_a, free_int_content), 0);
 	choose_sort(&stk_a, &stk_b);
-	// ft_printf("SORT COMPLETED\n");
-	// printlistboth(stk_a, stk_b);
 	return (ft_lstclear(&stk_a, free_int_content), 0);
 }

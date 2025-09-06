@@ -42,10 +42,7 @@ static int	populate_list_from_array(t_list **start, int count, char **array)
 	while (i < count)
 	{
 		if (!is_valid_integer(array[i]))
-		{
-			ft_printf("Error\n");
 			return (1);
-		}
 		data = malloc(sizeof(t_data));
 		if (!data)
 			return (1);
