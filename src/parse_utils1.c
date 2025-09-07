@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/07 21:52:42 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/07 21:56:43 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ static int	check_duplicates(t_list **start)
 	}
 	return (0);
 }
-static int	fill_data_cell (t_list **start, char *array)
+
+static int	fill_data_cell(t_list **start, char *array)
 {
 	t_data		*data;
-	
+
 	data = malloc(sizeof(t_data));
 	if (!data)
 		return (1);
@@ -49,7 +50,6 @@ static int	fill_data_cell (t_list **start, char *array)
 static int	populate_list_from_array(t_list **start, int count, char **array)
 {
 	int		i;
-	// t_data	*data;
 
 	i = 0;
 	while (i < count)
@@ -64,11 +64,6 @@ static int	populate_list_from_array(t_list **start, int count, char **array)
 			if (!is_valid_integer(array[i]))
 				return (1);
 			fill_data_cell(start, array[i]);
-			// data = malloc(sizeof(t_data));
-			// if (!data)
-			// 	return (1);
-			// data->value = ft_atoi(array[i]);
-			// ft_lstadd_back(start, ft_lstnew(data));
 		}
 		i++;
 	}

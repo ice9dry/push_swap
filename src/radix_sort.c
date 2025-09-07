@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 22:25:22 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 14:56:17 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/07 22:22:35 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,19 @@ void	radix_sort(t_list **stk_a, t_list **stk_b)
 	max_bits = 0;
 	while ((size - 1) >> max_bits)
 		max_bits++;
-	i = 0;
-	while (i < max_bits)
+	i = -1;
+	while (++i < max_bits)
 	{
-		j = 0;
-		while (j < size)
+		j = -1;
+		while (++j < size)
 		{
 			data = (t_data *)(*stk_a)->content;
 			if (((data->index >> i) & 1) == 0)
 				pb(stk_a, stk_b);
 			else
 				ra(stk_a);
-			j++;
 		}
 		while (*stk_b)
 			pa(stk_a, stk_b);
-		i++;
 	}
 }

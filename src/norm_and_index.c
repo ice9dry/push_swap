@@ -6,11 +6,26 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:52:14 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/07 18:08:35 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/07 22:15:35 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "norm_and_index.h"
+
+void	fill_tmp_array(t_list *current, int *arr)
+{
+	int		i;
+	t_data	*data;
+
+	i = 0;
+	while (current)
+	{
+		data = (t_data *)current->content;
+		arr[i] = data->value;
+		i++;
+		current = current->next;
+	}
+}
 
 int	norm_and_index(t_list *stk_a)
 {
@@ -23,14 +38,7 @@ int	norm_and_index(t_list *stk_a)
 	if (!arr)
 		return (1);
 	current = stk_a;
-	i = 0;
-	while (current)
-	{
-		data = (t_data *)current->content;
-		arr[i] = data->value;
-		i++;
-		current = current->next;
-	}
+	fill_tmp_array(current, arr);
 	bubble_sort(arr, ft_lstsize(stk_a));
 	current = stk_a;
 	while (current)
