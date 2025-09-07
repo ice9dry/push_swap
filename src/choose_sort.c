@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   choose_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:23:47 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/05 21:07:14 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/07 16:23:14 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	choose_sort(t_list **stk_a, t_list **stk_b)
 		four_sort(stk_a, stk_b);
 	else if (ft_lstsize(*stk_a) == 5)
 		five_sort(stk_a, stk_b);
-	else if (ft_lstsize(*stk_a) >= 6)// && ft_lstsize(*stk_a) <= 100)
-		// chunk_sort(stk_a, stk_b);
-	// else if (ft_lstsize(*stk_a) > 100)
+	else if (ft_lstsize(*stk_a) >= 6)
 		radix_sort(stk_a, stk_b);
 }

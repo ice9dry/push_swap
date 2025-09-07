@@ -13,7 +13,7 @@ LIBFT_DIR = libft
 FT_PRINTF_DIR = ft_printf
 
 # Target
-NAME = $(BIN_DIR)/main.out
+NAME = push_swap
 
 # Source files
 SRC = main.c parse_utils1.c parse_utils2.c push.c rotate.c reverse_rotate.c swap.c \

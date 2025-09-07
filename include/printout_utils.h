@@ -14,6 +14,7 @@
 # define PRINTOUT_UTILS_H
 
 # include "ft_printf.h"
+# include "parse_utils1.h"
 
 void	printlist(t_list *current);
 void	printlistboth(t_list *stk_a, t_list *stk_b);
