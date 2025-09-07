@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:38:39 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/07 16:24:59 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/07 18:20:40 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,19 +134,18 @@ void	five_sort(t_list **stk_a, t_list **stk_b)
 	pa(stk_a, stk_b);
 	pa(stk_a, stk_b);
 }
-void three_sort(t_list **stk_a)
+
+void	three_sort(t_list **stk_a)
 {
-	int first_index;
-	int second_index;
-	int third_index;
+	int	first_index;
+	int	second_index;
+	int	third_index;
 
 	first_index = ((t_data *)(*stk_a)->content)->index;
 	second_index = ((t_data *)(*stk_a)->next->content)->index;
 	third_index = ((t_data *)(*stk_a)->next->next->content)->index;
-	
 	if (first_index < second_index && second_index < third_index)
-		return;
-	
+		return ;
 	if (first_index < third_index && third_index < second_index)
 	{
 		rra(stk_a);
@@ -157,9 +156,7 @@ void three_sort(t_list **stk_a)
 	else if (second_index < third_index && third_index < first_index)
 		ra(stk_a);
 	else if (third_index < first_index && first_index < second_index)
-	{
 		rra(stk_a);
-	}
 	else if (third_index < second_index && second_index < first_index)
 		ra(stk_a);
 }

@@ -18,7 +18,7 @@ NAME = push_swap
 # Source files
 SRC = main.c parse_utils1.c parse_utils2.c push.c rotate.c reverse_rotate.c swap.c \
 	printout_utils.c free_utils.c norm_and_index.c \
-	radix_sort.c radix_sort_2.c radix_sort_3.c is_sorted.c \
+	radix_sort.c is_sorted.c \
 	choose_sort.c three_to_five_sort.c
 
 # Objects

@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 11:02:16 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/07 13:56:52 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/07 18:15:45 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	printlist(t_list *current)
 {
 	while (current)
 	{
-		ft_printf("%d (%d) -> ", *(int *)current->content, ((t_data *)current->content)->index);
+		ft_printf("%d (%d) -> ", *(int *)current->content,
+			((t_data *)current->content)->index);
 		current = current->next;
 	}
 	printf("NULL\n");

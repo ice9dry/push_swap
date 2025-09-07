@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_utils2.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/07 17:51:46 by marlee            #+#    #+#             */
+/*   Updated: 2025/09/07 18:15:20 by marlee           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "parse_utils2.h"
 
-static int check_overflow(long long res, int sign)
+static int	check_overflow(long long res, int sign)
 {
 	if (sign == 1)
 	{
@@ -15,7 +27,7 @@ static int check_overflow(long long res, int sign)
 	return (0);
 }
 
-static int get_sign(const char *str, int *i)
+static int	get_sign(const char *str, int *i)
 {
 	int	sign;
 
@@ -29,7 +41,7 @@ static int get_sign(const char *str, int *i)
 	return (sign);
 }
 
-int is_valid_integer(const char *str)
+int	is_valid_integer(const char *str)
 {
 	long long	res;
 	int			i;
@@ -54,4 +66,3 @@ int is_valid_integer(const char *str)
 	}
 	return (1);
 }
-

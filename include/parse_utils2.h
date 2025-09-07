@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_parse_utils2.h                                     :+:      :+:    :+:   */
+/*   parse_utils2.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:10:09 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 11:43:27 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/07 17:57:43 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "ft_printf.h"
 
-int is_valid_integer(const char *str);
+int	is_valid_integer(const char *str);
 
 #endif
