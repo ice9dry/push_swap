@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:38:39 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/07 22:26:04 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/07 23:36:23 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,8 @@ void	three_sort(t_list **stk_a)
 	else if (third_index < first_index && first_index < second_index)
 		rra(stk_a);
 	else if (third_index < second_index && second_index < first_index)
+	{
 		ra(stk_a);
+		sa(stk_a);
+	}
 }
