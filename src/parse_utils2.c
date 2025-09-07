@@ -31,9 +31,9 @@ static int get_sign(const char *str, int *i)
 
 int is_valid_integer(const char *str)
 {
-	long long   res;
-	int         i;
-	int         sign;
+	long long	res;
+	int			i;
+	int			sign;
 
 	res = 0;
 	i = 0;
@@ -52,6 +52,6 @@ int is_valid_integer(const char *str)
 			return (0);
 		i++;
 	}
-    return (1);
+	return (1);
 }
 

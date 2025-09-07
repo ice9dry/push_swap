@@ -6,11 +6,13 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/07 13:06:41 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/07 17:30:39 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse_utils1.h"
+
+static int	populate_from_single_string(t_list **start, char *arg_str);
 
 static int	check_duplicates(t_list **start)
 {
@@ -41,13 +43,21 @@ static int	populate_list_from_array(t_list **start, int count, char **array)
 	i = 0;
 	while (i < count)
 	{
-		if (!is_valid_integer(array[i]))
-			return (1);
-		data = malloc(sizeof(t_data));
-		if (!data)
-			return (1);
-		data->value = ft_atoi(array[i]);
-		ft_lstadd_back(start, ft_lstnew(data));
+		if (ft_strchr(array[i], ' ') != NULL)
+		{	
+			if (populate_from_single_string(start, array[i]))
+				return (1);
+		}
+		else 
+		{
+			if (!is_valid_integer(array[i]))
+				return (1);
+			data = malloc(sizeof(t_data));
+			if (!data)
+				return (1);
+			data->value = ft_atoi(array[i]);
+			ft_lstadd_back(start, ft_lstnew(data));
+		}
 		i++;
 	}
 	if (check_duplicates(start))
