@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:52:14 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/07 22:15:35 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/08 10:51:15 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	fill_tmp_array(t_list *current, int *arr)
 int	norm_and_index(t_list *stk_a)
 {
 	int		*arr;
-	int		i;
 	t_list	*current;
 	t_data	*data;
 
@@ -47,9 +46,6 @@ int	norm_and_index(t_list *stk_a)
 		data->index = get_sorted_index(data->value, arr, ft_lstsize(stk_a));
 		current = current->next;
 	}
-	i = 0;
-	while (i < ft_lstsize(stk_a))
-		i++;
 	free(arr);
 	return (0);
 }
