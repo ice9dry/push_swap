@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 17:03:34 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 11:50:23 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/08 09:51:12 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ void	swap(t_list **stack)
 	t_list	*second_node;
 
 	if (!*stack || !(*stack)->next)
-	{
-		ft_printf("NOTHING TO DO! Remove this before submission!\n");
 		return ;
-	}
 	first_node = *stack;
 	second_node = first_node->next;
 	first_node->next = second_node->next;
