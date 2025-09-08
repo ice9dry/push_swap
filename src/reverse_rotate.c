@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 17:03:34 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 11:49:24 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/08 10:12:28 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ void	reverse_rotate(t_list **stack)
 	t_list	*second_last_node;
 
 	if (!*stack || !(*stack)->next)
-	{
-		ft_printf("NOTHING TO DO! Remove this before submission!\n");
 		return ;
-	}
 	second_last_node = *stack;
 	while (second_last_node->next->next != NULL)
 		second_last_node = second_last_node->next;

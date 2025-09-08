@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 16:01:55 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/03 11:48:58 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/08 10:11:59 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ void	push(t_list **src_stack, t_list **dst_stack)
 	t_list	*node_to_push;
 
 	if (!*src_stack)
-	{
-		ft_printf("NOTHING TO DO! Remove this before submission!\n");
 		return ;
-	}
 	node_to_push = *src_stack;
 	*src_stack = (*src_stack)->next;
 	node_to_push->next = NULL;
