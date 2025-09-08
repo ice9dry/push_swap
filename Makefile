@@ -8,8 +8,6 @@ ARFLAGS	= rcs
 OBJ_DIR	= objs
 SRC_DIR = src
 INC_DIR = include
-BIN_DIR = bin
-LIBFT_DIR = libft
 FT_PRINTF_DIR = ft_printf
 
 # Target
@@ -27,14 +25,11 @@ OBJ	= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 all: makeprintf $(NAME)
 
 # Build objects
-$(NAME): $(OBJ) | $(BIN_DIR)
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $^ -o $@  ft_printf/libftprintf.a
 
 makeprintf:
 	@$(MAKE) -C $(FT_PRINTF_DIR)
-
-$(BIN_DIR):
-	mkdir -p $@
 
 $(OBJ_DIR):
 	mkdir -p $@
