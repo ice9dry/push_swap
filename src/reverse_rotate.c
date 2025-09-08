@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 17:03:34 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/08 10:12:28 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/08 21:51:20 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "reverse_rotate.h"
 
-//Shifts last element to the top.
 void	reverse_rotate(t_list **stack)
 {
 	t_list	*last_node;

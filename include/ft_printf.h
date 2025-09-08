@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:34:37 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/01 19:40:35 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/08 22:08:46 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "libft.h"
 # include <stdarg.h>
-# include <unistd.h>
 
 int	ft_printf(const char *format, ...);
 int	ft_nbrlen(int n);
