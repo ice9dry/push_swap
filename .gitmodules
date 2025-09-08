@@ -1,9 +1,6 @@
 [submodule "ft_printf"]
 	path = ft_printf
 	url = git@github.com:ice9dry/ft_printf.git
-[submodule "libft"]
-	path = libft
-	url = git@github.com:ice9dry/libft.git
 [submodule "utils"]
 	path = utils
 	url = git@github.com:ice9dry/utils.git
