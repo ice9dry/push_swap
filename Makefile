@@ -14,9 +14,17 @@ FT_PRINTF_DIR = ft_printf
 NAME = push_swap
 
 # Source files
-SRC = main.c parse_utils1.c parse_utils2.c push.c rotate.c reverse_rotate.c swap.c \
+SRC = main.c parse_utils1.c parse_utils2.c push.c rotate.c \
+	reverse_rotate.c swap.c \
 	free_utils.c norm_and_index.c radix_sort.c is_sorted.c \
 	choose_sort.c three_to_five_sort.c
+
+# Header files
+HEADER_NAMES = choose_sort.h is_sorted.h norm_and_index.h push.h rotate.h \
+	free_utils.h libft.h parse_utils1.h radix_sort.h swap.h \
+	ft_printf.h main.h parse_utils2.h reverse_rotate.h \
+	three_to_five_sort.h
+HEADERS = $(patsubst %,$(INC_DIR)/%,$(HEADER_NAMES))
 
 # Objects
 OBJ	= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
@@ -35,7 +43,7 @@ $(OBJ_DIR):
 	mkdir -p $@
 
 # Compile library objects
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)| $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean object files
