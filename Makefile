@@ -53,10 +53,9 @@ clean:
 
 # Clean object and executable files
 fclean: clean
-	rm -rf $(BIN_DIR)
 	rm $(FT_PRINTF_DIR)/libftprintf.a
 
 # Rebuild everything
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re makeprintf
