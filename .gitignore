@@ -6,3 +6,4 @@ push_swap
 ft_printf/libftprintf.a
 ft_printf/libft/libft.a
 src/push_swap.code-workspace
+push_swap.code-workspace
