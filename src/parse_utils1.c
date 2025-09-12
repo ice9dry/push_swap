@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/08 22:17:00 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/12 14:36:47 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,11 @@ static int	populate_from_single_string(t_list **start, char *arg_str)
 	count = 0;
 	while (split_array[count])
 		count++;
+	if (count == 0)
+	{
+		free_split_array(split_array);
+		return (0);
+	}
 	status = populate_list_from_array(start, count, split_array);
 	free_split_array(split_array);
 	return (status);
