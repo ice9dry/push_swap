@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:06:35 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/12 14:36:47 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/12 16:22:19 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,10 @@ static int	populate_from_single_string(t_list **start, char *arg_str)
 
 int	check_and_populate(t_list **start, int argc, char **argv)
 {
-	if (argc < 2 || (argc == 2 && argv[1][0] == '\0'))
-		return (0);
+	if (argc < 2)
+		return (3);
+	if (argc == 2 && argv[1][0] == '\0')
+		return (2);
 	if (argc == 2)
 		return (populate_from_single_string(start, argv[1]));
 	else
