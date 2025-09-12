@@ -1,6 +1,6 @@
 # Compiler and flags
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -g -I$(INC_DIR)
+CFLAGS	= -Wall -Wextra -Werror -I$(INC_DIR)
 AR		= ar
 ARFLAGS	= rcs
 
