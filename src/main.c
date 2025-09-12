@@ -6,7 +6,7 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:47:21 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/12 14:38:05 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/12 14:54:28 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	main(int argc, char **argv)
 		return (ft_putstr_fd("Error\n", 2),
 			ft_lstclear(&stk_a, free_int_content), 1);
 	else if (stk_a == NULL)
-		return (ft_lstclear(&stk_a, free_int_content), 0);
+		return (ft_putstr_fd("Error\n", 2),
+			ft_lstclear(&stk_a, free_int_content), 1);
 	norm_and_index(stk_a);
 	if (is_sorted(stk_a))
 		return (ft_lstclear(&stk_a, free_int_content), 0);
