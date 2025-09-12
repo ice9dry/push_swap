@@ -6,67 +6,82 @@
 /*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 22:25:22 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/12 12:03:55 by marlee           ###   ########.fr       */
+/*   Updated: 2025/09/12 12:21:43 by marlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "radix_sort.h"
 #include "is_sorted.h"
 
+static int	get_max_bits(int size)
+{
+	int	bits;
+
+	bits = 0;
+	while ((size - 1) >> bits)
+		bits++;
+	return (bits);
+}
+
+static void	process_stack_a(t_list **a, t_list **b, int bit, int *count)
+{
+	int		size;
+	int		j;
+	t_data	*data;
+
+	size = ft_lstsize(*a);
+	j = -1;
+	while (++j < size && !is_sorted(*a))
+	{
+		data = (t_data *)(*a)->content;
+		if (((data->index >> bit) & 1) == 0)
+		{
+			if (j == size - 1)
+				break ;
+			pb(a, b);
+			(*count)++;
+		}
+		else
+			ra(a);
+	}
+}
+
+static void	process_stack_b(t_list **a, t_list **b, int bit, int last_bit)
+{
+	int		k;
+	int		size;
+	t_data	*data;
+
+	k = -1;
+	size = ft_lstsize(*b);
+	if (bit < last_bit)
+	{
+		while (++k < size)
+		{
+			data = (t_data *)(*b)->content;
+			if (((data->index >> (bit + 1)) & 1) == 0)
+				rb(b);
+			else
+				pa(a, b);
+		}
+	}
+	else
+		while (*b)
+			pa(a, b);
+}
+
 void	radix_sort(t_list **stk_a, t_list **stk_b)
 {
-	t_data	*data;
-	int		max_bits;
-	int		i;
-	int		j;
-	int		k;
-	int		size_a;
-	int		size_b;
-	int		count;
+	int	i;
+	int	count;
+	int	max_bits;
 
-	size_a = ft_lstsize(*stk_a);
-	max_bits = 0;
-	while ((size_a - 1) >> max_bits)
-		max_bits++;
-
+	max_bits = get_max_bits(ft_lstsize(*stk_a));
 	i = -1;
 	while (++i < max_bits)
 	{
 		count = 0;
-		j = -1;
-		size_a = ft_lstsize(*stk_a);
-		while (++j < size_a && !is_sorted(*stk_a))
-		{
-			data = (t_data *)(*stk_a)->content;
-			if (((data->index >> i) & 1) == 0)
-			{
-				if (j == size_a - 1)
-					break ;
-				pb(stk_a, stk_b);
-				count++;
-			}
-			else
-			{
-				ra(stk_a);
-			}
-		}
-		k = -1;
-		if (i < max_bits - 1)
-		{
-			size_b = ft_lstsize(*stk_b);
-			while (++k < size_b)
-			{
-				data = (t_data *)(*stk_b)->content;
-				if (((data->index >> (i + 1)) & 1) == 0)
-					rb(stk_b);
-				else
-					pa(stk_a, stk_b);
-			}
-		}
-		else
-		{
-			while (*stk_b)
-				pa(stk_a, stk_b);
-		}
+		process_stack_a(stk_a, stk_b, i, &count);
+		process_stack_b(stk_a, stk_b, i, max_bits - 1);
 	}
 }
