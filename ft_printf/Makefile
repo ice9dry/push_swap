@@ -1,6 +1,6 @@
 # Compiler and flags
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 AR		= ar
 ARFLAGS	= rcs
 

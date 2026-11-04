@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marklee <marklee@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 17:51:46 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/08 22:16:56 by marlee           ###   ########.fr       */
+/*   Updated: 2026/11/04 18:26:50 by marklee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	check_overflow(long long res, int sign)
 	}
 	else
 	{
+		// The INT_MIN value without the sign is suffixed with 'L'
+		// for backward compatibility on older compilers e.g. C90
 		if (res > 2147483648L)
 			return (1);
 	}

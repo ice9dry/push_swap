@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   norm_and_index.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marklee <marklee@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:52:14 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/08 22:17:07 by marlee           ###   ########.fr       */
+/*   Updated: 2026/11/04 21:43:33 by marklee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ void	fill_tmp_array(t_list *current, int *arr)
 	}
 }
 
+// Function attaches an index number against the value
+// e.g. If the values are 1, 10, 5 then, the index would be 1, 3, 2
+// This is so the sorting algo would be comparing the index instead of the values
+// Important for Radix sort which uses bit shifting comparison
+// Returns 0 for no errors
+// Returns 1 when there is a malloc error (for the temp array)
 int	norm_and_index(t_list *stk_a)
 {
 	int		*arr;
@@ -39,7 +45,7 @@ int	norm_and_index(t_list *stk_a)
 	current = stk_a;
 	fill_tmp_array(current, arr);
 	bubble_sort(arr, ft_lstsize(stk_a));
-	current = stk_a;
+	current = stk_a; // Extra line below which prob can remove
 	while (current)
 	{
 		data = (t_data *)current->content;

@@ -44,7 +44,7 @@ static void	process_stack_a(t_list **a, t_list **b, int bit, int *count)
 		else
 			ra(a);
 	}
-}
+}   
 
 static void	process_stack_b(t_list **a, t_list **b, int bit, int last_bit)
 {
