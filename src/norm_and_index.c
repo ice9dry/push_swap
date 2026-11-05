@@ -6,7 +6,7 @@
 /*   By: marklee <marklee@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:52:14 by marlee            #+#    #+#             */
-/*   Updated: 2026/11/04 21:43:33 by marklee          ###   ########.fr       */
+/*   Updated: 2026/11/05 15:33:07 by marklee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,28 @@ int	norm_and_index(t_list *stk_a)
 	t_list	*current;
 	t_data	*data;
 
+	// We need a temp array to store the integers
 	arr = malloc(sizeof(int) * ft_lstsize(stk_a));
 	if (!arr)
 		return (1);
 	current = stk_a;
+	// We fill the array with the integers first
 	fill_tmp_array(current, arr);
+	// Then we sort using a bubble sort
 	bubble_sort(arr, ft_lstsize(stk_a));
 	current = stk_a; // Extra line below which prob can remove
+	// Then we attach an index to the integer based on the above
+	// sorted array.
+	// In the push swap, we'll be pushing/swapping based on the
+	// index number and not the value of the integer.
 	while (current)
 	{
 		data = (t_data *)current->content;
 		data->index = get_sorted_index(data->value, arr, ft_lstsize(stk_a));
 		current = current->next;
 	}
+	// Now, in the linked list, each integer has an index of
+	// where it should be based on the value of the integer.
 	free(arr);
 	return (0);
 }
@@ -80,6 +89,9 @@ void	bubble_sort(int *arr, int size)
 	}
 }
 
+// Function takes the value of the integer in the linked list
+// compares it with each element in the array until it finds it
+// Returns i, the index, of where the value is in the sorted array
 int	get_sorted_index(int value, int *arr, int size)
 {
 	int	i;

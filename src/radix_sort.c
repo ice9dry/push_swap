@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlee <marlee@student.42student.sg>       +#+  +:+       +#+        */
+/*   By: marklee <marklee@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 22:25:22 by marlee            #+#    #+#             */
-/*   Updated: 2025/09/12 12:21:43 by marlee           ###   ########.fr       */
+/*   Updated: 2026/11/05 17:00:41 by marklee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	get_max_bits(int size)
 	return (bits);
 }
 
-static void	process_stack_a(t_list **a, t_list **b, int bit, int *count)
+static void	process_stack_a(t_list **a, t_list **b, int bit, int *count) // Can remove count
 {
 	int		size;
 	int		j;
@@ -44,7 +44,7 @@ static void	process_stack_a(t_list **a, t_list **b, int bit, int *count)
 		else
 			ra(a);
 	}
-}   
+}
 
 static void	process_stack_b(t_list **a, t_list **b, int bit, int last_bit)
 {
@@ -73,15 +73,19 @@ static void	process_stack_b(t_list **a, t_list **b, int bit, int last_bit)
 void	radix_sort(t_list **stk_a, t_list **stk_b)
 {
 	int	i;
-	int	count;
+	int	count; // Can remove this
 	int	max_bits;
 
+	// Get the number of bits that the index would use
+	// If there are 6 to 8 integers, then max_bits is 3, i.e. 2^3 = 8
+	// If there are 9 to 16 integers, then max_bits is 4, i.e. 2^4 = 16
+	// If there are 17 to 32 integers, then max_bits is 4, i.e. 2^5 = 32
 	max_bits = get_max_bits(ft_lstsize(*stk_a));
 	i = -1;
 	while (++i < max_bits)
 	{
-		count = 0;
-		process_stack_a(stk_a, stk_b, i, &count);
+		count = 0; // Can remove this
+		process_stack_a(stk_a, stk_b, i, &count); // Can remove count
 		process_stack_b(stk_a, stk_b, i, max_bits - 1);
 	}
 }
